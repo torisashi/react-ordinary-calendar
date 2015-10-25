@@ -1,0 +1,35 @@
+{
+  "name": "react-ordinary-calendar",
+  "version": "0.1.1",
+  "description": "A ordinary calendar component built with React.js",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "calendar",
+    "react-component"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "torisashi"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
+    "react": "^0.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torisashi/react-ordinary-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torisashi/react-ordinary-calendar/issues"
+  },
+  "homepage": "https://github.com/torisashi/react-ordinary-calendar"
+}
