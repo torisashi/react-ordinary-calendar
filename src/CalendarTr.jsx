@@ -23,7 +23,7 @@ export default class CalendarTr extends React.Component {
       if(this.props.row == 0) {
         cells.push(<CalendarTh key={col} val={this.state.vals[col]} options={this.props.options} />);
       }else{
-        cells.push(<CalendarTd key={col} val={this.state.vals[col]} options={this.props.options} />);
+        cells.push(<CalendarTd key={col} isThisMonth={this.props.isThisMonth} val={this.state.vals[col]} options={this.props.options} />);
       }
     }
     return(

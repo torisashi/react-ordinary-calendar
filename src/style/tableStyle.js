@@ -32,7 +32,7 @@ export default {
     borderCollapse: 'collapse',
     color: '#212121',
     fontSize: '12px',
-    backgroundColor: '#EEE',
+    backgroundColor: '#f7f7f7',
     textAlign: 'center'
   },
   tr: {
@@ -45,6 +45,12 @@ export default {
   td: {
     padding: '9px',
     borderBottom: 'solid 2px #fff',
+    cursor: 'pointer',
+  },
+  today: {
+    padding: '9px',
+    borderBottom: 'solid 2px #fff',
+    background: '#E0E0E0',
     cursor: 'pointer',
   },
 }
