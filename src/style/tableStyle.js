@@ -47,6 +47,10 @@ export default {
     borderBottom: 'solid 2px #fff',
     cursor: 'pointer',
   },
+  td__a: {
+    textDecoration: 'none',
+    color: '#212121'
+  },
   today: {
     padding: '9px',
     borderBottom: 'solid 2px #fff',

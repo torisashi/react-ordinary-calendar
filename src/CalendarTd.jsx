@@ -22,13 +22,14 @@ export default class CalendarTd extends React.Component {
   }
 
   render() {
+    let ymd = this.state.val.year + '-' + this.state.val.month + '-' + this.state.val.date;
     if(this.props.isThisMonth && this.state.val == this.today) {
       return(
-        <td style={this.props.options.defaultStyle ? tableStyle.today : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val}</td>
+        <td style={this.props.options.defaultStyle ? tableStyle.today : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val.date}</td>
       )
     } else {
       return(
-        <td style={this.props.options.defaultStyle ? tableStyle.td : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val}</td>
+        <td style={this.props.options.defaultStyle ? tableStyle.td : ''} onClick={this.callOtherComponent.bind(this)} ><a href={ymd} style={this.props.options.defaultStyle ? tableStyle.td__a : ''}>{this.state.val.date}</a></td>
       )
     }
   }
