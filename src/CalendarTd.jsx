@@ -23,7 +23,7 @@ export default class CalendarTd extends React.Component {
 
   render() {
     let ymd = this.state.val.year + '-' + this.state.val.month + '-' + this.state.val.date;
-    if(this.props.isThisMonth && this.state.val == this.today) {
+    if(this.props.isThisMonth && this.state.val.date == this.today) {
       return(
         <td style={this.props.options.defaultStyle ? tableStyle.today : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val.date}</td>
       )
