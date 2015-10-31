@@ -18,7 +18,7 @@ export default class CalendarTh extends React.Component {
 
   render() {
     return(
-      <th style={this.props.options.defaultStyle ? tableStyle.th : ''}>{this.state.val}</th>
+      <th style={this.props.options.defaultStyle ? tableStyle.th : {}}>{this.state.val}</th>
     )
   }
 

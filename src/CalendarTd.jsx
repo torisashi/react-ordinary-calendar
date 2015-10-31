@@ -26,19 +26,20 @@ export default class CalendarTd extends React.Component {
     });
   }
 
-  callOtherComponent() {
-    this.props.options.callback();
+  callOtherComponent(ymd, e) {
+    e.preventDefault();
+    this.props.options.callback(ymd);
   }
 
   render() {
     let ymd = this.state.val.year + '-' + this.state.val.month + '-' + this.state.val.date;
     if(this.isToday()) {
       return(
-        <td style={this.props.options.defaultStyle ? tableStyle.today : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val.date}</td>
+        <td style={this.props.options.defaultStyle ? tableStyle.today : {}} onClick={this.callOtherComponent.bind(this, ymd)}><a href={ymd} style={this.props.options.defaultStyle ? tableStyle.td__a : {}}>{this.state.val.date}</a></td>
       )
     } else {
       return(
-        <td style={this.props.options.defaultStyle ? tableStyle.td : ''} onClick={this.callOtherComponent.bind(this)} ><a href={ymd} style={this.props.options.defaultStyle ? tableStyle.td__a : ''}>{this.state.val.date}</a></td>
+        <td style={this.props.options.defaultStyle ? tableStyle.td : {}} onClick={this.callOtherComponent.bind(this, ymd)} ><a href={ymd} style={this.props.options.defaultStyle ? tableStyle.td__a : {}}>{this.state.val.date}</a></td>
       )
     }
   }

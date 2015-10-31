@@ -16,7 +16,7 @@ export default class Calendar extends React.Component {
 
       this.options = {
         callback: (typeof(this.props.options) == 'undefined' || typeof(this.props.options.callback) == 'undefined') ? () => {} : this.props.options.callback,
-        defaultStyle: (typeof(this.props.options) == 'undefined' || typeof(this.props.options.defaultStyle) == 'undefined') ? true : false
+        defaultStyle: (typeof(this.props.options) == 'undefined' || typeof(this.props.options.defaultStyle) == 'undefined' || typeof(this.props.options.defaultStyle)) ? true : false
       };
 
     }
