@@ -8,7 +8,16 @@ export default class CalendarTd extends React.Component {
     this.state = {
       val: this.props.val
     };
-    this.today = (new Date()).getDate();
+  }
+
+  isToday(data) {
+    let today = new Date();
+    if(this.state.val.year == today.getFullYear() && this.state.val.month == today.getMonth() + 1
+        && this.state.val.date == today.getDate()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   componentWillReceiveProps(props) {
@@ -23,7 +32,7 @@ export default class CalendarTd extends React.Component {
 
   render() {
     let ymd = this.state.val.year + '-' + this.state.val.month + '-' + this.state.val.date;
-    if(this.props.isThisMonth && this.state.val.date == this.today) {
+    if(this.isToday()) {
       return(
         <td style={this.props.options.defaultStyle ? tableStyle.today : ''} onClick={this.callOtherComponent.bind(this)}>{this.state.val.date}</td>
       )

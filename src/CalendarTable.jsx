@@ -21,22 +21,12 @@ export default class CalendarTable extends React.Component {
       });
     }
 
-    isThisMonth(data) {
-      let today = new Date();
-      if(data.year == today.getFullYear() && data.month == (today.getMonth() + 1) ) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
     render() {
         let firstDay = (new Date(this.state.year, this.state.month - 1, 1)).getDay(),
             lastDate = (new Date(this.state.year, this.state.month, 0)).getDate(),
             date = 1,
             skip = true,
-            trs = [],
-            isThisMonth = this.isThisMonth(this.state);
+            trs = [];
 
         for(let row = 0; row < 7; row++) {
 
@@ -67,7 +57,7 @@ export default class CalendarTable extends React.Component {
           if(row == 0) {
             valArray.date = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
           }
-          trs.push(<CalendarTr key={row} row={row} isThisMonth={isThisMonth} vals={valArray} options={this.props.options} />);
+          trs.push(<CalendarTr key={row} row={row} vals={valArray} options={this.props.options} />);
         }
 
         return(
