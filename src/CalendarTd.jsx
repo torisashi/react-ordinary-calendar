@@ -31,8 +31,17 @@ export default class CalendarTd extends React.Component {
     this.props.options.callback(ymd);
   }
 
+  createYmd() {
+    let date = this.state.val.date; 
+    if(date < 10) {
+      date = '0' + this.state.val.date;
+    }
+    let ymd = this.state.val.year + '-' + this.state.val.month + '-' + date;
+    return ymd;
+  }
+
   render() {
-    let ymd = this.state.val.year + '-' + this.state.val.month + '-' + this.state.val.date;
+    let ymd = this.createYmd();
     if(this.isToday()) {
       return(
         <td style={this.props.options.defaultStyle ? tableStyle.today : {}} onClick={this.callOtherComponent.bind(this, ymd)}><a href={ymd} style={this.props.options.defaultStyle ? tableStyle.td__a : {}}>{this.state.val.date}</a></td>
