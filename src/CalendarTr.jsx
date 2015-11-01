@@ -1,6 +1,7 @@
 import React from 'react';
 import CalendarTh from './CalendarTh';
 import CalendarTd from './CalendarTd';
+import tableStyle from './style/tableStyle';
 
 export default class CalendarTr extends React.Component {
 
@@ -28,11 +29,11 @@ export default class CalendarTr extends React.Component {
           month: this.state.vals.month,
           year: this.state.vals.year
         };
-        cells.push(<CalendarTd key={col} isThisMonth={this.props.isThisMonth} val={data} options={this.props.options} />);
+        cells.push(<CalendarTd key={col} val={data} options={this.props.options} />);
       }
     }
     return(
-      <tr>{cells}</tr>
+      <tr style={this.props.options.defaultStyle ? tableStyle.tr : {}}>{cells}</tr>
     );
   }
 

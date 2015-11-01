@@ -1,13 +1,13 @@
 export default {
   caption: {
-    backgroundColor: '#E0E0E0',
-    padding: '16px 0 5px',
+    padding: '16px 0',
     fontSize: '16px',
-    position: 'relative'
+    position: 'relative',
   },
   title: {
     display: 'inline-block',
-    margin: '0'
+    margin: '0',
+    fontSize: '15px'
   },
   nextBtn: {
     display: 'inline-block',
@@ -16,7 +16,8 @@ export default {
     cursor: 'pointer',
     width: '24px',
     height: '24px',
-    position: 'absolute'
+    position: 'absolute',
+    fontSize: '16px'
   },
   prevBtn: {
     display: 'inline-block',
@@ -26,25 +27,21 @@ export default {
     height: '24px',
     position: 'absolute',
     left: '10px',
-    top: '15px'
+    top: '15px',
+    fontSize: '16px'
   },
   table: {
     borderCollapse: 'collapse',
     color: '#212121',
     fontSize: '12px',
-    backgroundColor: '#f7f7f7',
+    backgroundColor: '#fff',
     textAlign: 'center'
-  },
-  tr: {
   },
   th: {
     padding: '9px',
-    backgroundColor: '#E0E0E0',
-    borderBottom: 'solid 2px #fff',
   },
   td: {
     padding: '9px',
-    borderBottom: 'solid 2px #fff',
     cursor: 'pointer',
   },
   td__a: {
@@ -53,8 +50,7 @@ export default {
   },
   today: {
     padding: '9px',
-    borderBottom: 'solid 2px #fff',
-    background: '#E0E0E0',
+    background: '#f1f1f1',
     cursor: 'pointer',
   },
 }
