@@ -19,7 +19,7 @@ ReactDOM.render(
   wrapper
 );
 ```
-## Porps
+## Props
 
 ### callback
 You can pass the callback function with this prop.
