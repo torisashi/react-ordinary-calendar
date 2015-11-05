@@ -4,67 +4,67 @@ import tableStyle from './style/tableStyle';
 
 export default class CalendarTable extends React.Component {
 
-    constructor(props) {
+  constructor(props) {
+  
+    super(props);
+    this.state = {
+      year: this.props.date.year,
+      month: this.props.date.month 
+    };
+  
+  }
 
-        super(props);
-        this.state = {
-          year: this.props.date.year,
-          month: this.props.date.month 
-        };
+  componentWillReceiveProps(props) {
+    this.setState({
+      year: props.date.year,
+      month: props.date.month 
+    });
+  }
 
-    }
-
-    componentWillReceiveProps(props) {
-      this.setState({
-        year: props.date.year,
-        month: props.date.month 
-      });
-    }
-
-    render() {
-        let firstDay = (new Date(this.state.year, this.state.month - 1, 1)).getDay(),
-            lastDate = (new Date(this.state.year, this.state.month, 0)).getDate(),
-            date = 1,
-            skip = true,
-            trs = [];
-
-        for(let row = 0; row < 7; row++) {
-
-          let valArray = {};
-          valArray = {
-            date: [],
-            month: this.state.month,
-            year: this.state.year
-          };
-
-          for(let col = 0; col < 7; col++) {
-
-            if(row == 1 && firstDay == col) {
-              skip = false;
-            }
-            if(date > lastDate) {
-              skip = true;
-            }
-
-            if(!skip) {
-              valArray.date.push(date);
-              date++;
-            }else{
-              valArray.date.push('\u00a0');
-            }
-          }
-
-          if(row == 0) {
-            valArray.date = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-          }
-          trs.push(<CalendarTr key={row} row={row} vals={valArray} options={this.props.options} />);
+  render() {
+    let firstDay = (new Date(this.state.year, this.state.month - 1, 1)).getDay(),
+        lastDate = (new Date(this.state.year, this.state.month, 0)).getDate(),
+        date = 1,
+        skip = true,
+        trs = [];
+    
+    for(let row = 0; row < 7; row++) {
+    
+      let valArray = {};
+      valArray = {
+        date: [],
+        month: this.state.month,
+        year: this.state.year
+      };
+    
+      for(let col = 0; col < 7; col++) {
+    
+        if(row == 1 && firstDay == col) {
+          skip = false;
         }
-
-        return(
-            <tbody>
-              {trs}
-            </tbody>
-        )
+        if(date > lastDate) {
+          skip = true;
+        }
+    
+        if(!skip) {
+          valArray.date.push(date);
+          date++;
+        }else{
+          valArray.date.push('\u00a0');
+        }
+      }
+    
+      if(row == 0) {
+        valArray.date = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      }
+      trs.push(<CalendarTr key={row} row={row} vals={valArray} options={this.props.options} />);
     }
+    
+    return(
+      <tbody>
+        {trs}
+      </tbody>
+    )
+  }
 
 }
